@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from bellman_ford import bellman_ford, reconstruct_path
+import os
 import json
 
 app = Flask(__name__)
@@ -50,4 +51,5 @@ def get_topology():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
