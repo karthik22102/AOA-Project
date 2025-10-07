@@ -3,7 +3,7 @@ from bellman_ford import bellman_ford, reconstruct_path
 import os
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 # Sample network topology
 network_topology = {
